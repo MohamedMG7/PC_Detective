@@ -1,0 +1,8 @@
+For This Project i Will use a mix of system.management and 3rd party libraries
+to read data from the Hardware like libreHardwareMonitor
+
+
+System.Management MemoryData Documentation Link:
+https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-physicalmemory
+
+ 
