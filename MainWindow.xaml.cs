@@ -4,6 +4,7 @@ using System.Windows;
 using LibreHardwareMonitor.Hardware;
 using PC_Detective.repositories;
 using System.Diagnostics;
+using System.Windows.Input;
 
 namespace PC_Detective
 {
@@ -23,6 +24,7 @@ namespace PC_Detective
 			//LoadGeneralData();
 			//LoadGeneralDataAsync();
 			usingLibreLib();
+			
 		}
 
 		#region hide
@@ -172,5 +174,54 @@ namespace PC_Detective
 				MessageBox.Show($"Error loading hardware info: {ex.Message}");
 			}
 		}
-	}
+
+        public void DetailsFill(string type)
+        {
+            List<DetailItem> details = new List<DetailItem>();
+
+            switch (type)
+            {
+                case "CPU":
+                    details.Add(new DetailItem { Key = "Model", Value = hr.GetCPUModelWMI() });
+                    details.Add(new DetailItem { Key = "Cores", Value = hr.GetCPUCoreInfo() });
+                    details.Add(new DetailItem { Key = "Default Clock Speed", Value = hr.GetCPUMaxClockSpeed() });
+                    details.Add(new DetailItem { Key = "Serial Number", Value = hr.GetCPUSerialNumber() });
+                    break;
+
+                case "OS":
+                    details.Add(new DetailItem { Key = "OS Name", Value = hr.GetOsName() });
+                    details.Add(new DetailItem { Key = "OS Version", Value = hr.GetOsVersion() });
+                    break;
+
+                case "RAM":
+                    details.Add(new DetailItem { Key = "RAM Info", Value = hr.GetRAMsData() });
+                    break;
+
+                case "Storage":
+                    details.Add(new DetailItem { Key = "Storage Info", Value = hr.GetDiskDriveData() });
+                    break;
+
+                case "GPU":
+                    var gpuName = hr.GetGPUName(new LibreHardwareMonitor.Hardware.Computer { IsGpuEnabled = true });
+                    details.Add(new DetailItem { Key = "GPU Name", Value = gpuName });
+                    break;
+
+                default:
+                    details.Add(new DetailItem { Key = "Error", Value = "No details available!" });
+                    break;
+            }
+
+            // Bind the details to the UI
+            DetailsPanel.ItemsSource = details;
+        }
+
+        private void ShowCPUDetails(object sender, MouseButtonEventArgs e)
+        {
+            DetailsFill("CPU");
+        }
+        private void ShowOSDetails(object sender, MouseButtonEventArgs e)
+        {
+            DetailsFill("OS");
+        }
+    }
 }
