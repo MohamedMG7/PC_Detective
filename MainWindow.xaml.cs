@@ -15,78 +15,20 @@ namespace PC_Detective
 	public partial class MainWindow : Window
 	{
 		HardwareRepository hr = new HardwareRepository();
+		CachingSys Cs = new CachingSys();
 			
 		public MainWindow()
 		{
 			InitializeComponent();
-			//LoadCPUData();
-			//LoadGPUData();
-			//LoadGeneralData();
-			//LoadGeneralDataAsync();
-			usingLibreLib();
+
+			IsCpuCachedAsync();
+			IsOsDataCachedAsync();
+
+			//usingLibreLib();
 			
 		}
 
-		#region hide
-		//private void LoadCPUData() {
-		//	CPU cpuInfo = s.GetCPUInformation();
-
-		//	if (cpuInfo != null)
-		//	{
-		//		IDText.Text = cpuInfo.ID;
-		//		SocketText.Text = cpuInfo.Socket;
-		//		NameText.Text = cpuInfo.Name;
-		//		DescriptionText.Text = cpuInfo.Description;
-		//		AddressWidthText.Text = cpuInfo.AddressWidth.ToString();
-		//		DataWidthText.Text = cpuInfo.DataWidth.ToString();
-		//		ArchitectureText.Text = cpuInfo.Architecture.ToString();
-		//		SpeedMHzText.Text = cpuInfo.SpeedMHz.ToString();
-		//		BusSpeedMHzText.Text = cpuInfo.BusSpeedMHz.ToString();
-		//		L2CacheText.Text = cpuInfo.L2Cache.ToString();
-		//		L3CacheText.Text = cpuInfo.L3Cache.ToString();
-		//		CoresText.Text = cpuInfo.Cores.ToString();
-		//		ThreadsText.Text = cpuInfo.Threads.ToString();
-		//		CurrentClockSpeedText.Text = cpuInfo.CurrentClockSpeed.ToString();
-		//	}
-		//	else
-		//	{
-		//		MessageBox.Show("CPU information could not be retrieved.");
-		//	}
-		//}
-
-		//private void LoadGPUData() {
-
-		//	GPU GPUInformation = s.GetGPUInformation();
-
-		//	if (GPUInformation != null)
-		//	{
-		//		GPUIDText.Text = GPUInformation.ID;
-		//		GPUNameText.Text = GPUInformation.Name;
-		//		GPUDescriptionText.Text = GPUInformation.Description;
-		//		MemorySizeText.Text = GPUInformation.MemorySize.ToString();
-		//		GPUCoreClockText.Text = GPUInformation.CoreClock.ToString();
-		//		GPUMemoryClockText.Text = GPUInformation.MemoryClock.ToString();
-		//		GPUDriverVersionText.Text = GPUInformation.DriverVersion;
-		//		GPUManufacturerText.Text = GPUInformation.Manufacturer;
-		//		GPUTemperatureText.Text = GPUInformation.Temperature.ToString();
-		//		GPUArchitectureText.Text = GPUInformation.Architecture;
-		//		GPUCoresText.Text = GPUInformation.Cores.ToString();
-		//	}
-		//	else
-		//	{
-		//		MessageBox.Show("GPU information could not be retrieved.");
-		//	}
-		//}
-		#endregion
-
-		//public void LoadGeneralData() {
-		//	General gData = s.hardwareinfolib();
-		//	GeneralOSNameText.Text = gData.OperatingSystem_Name;
-		//	GeneralOSVersionText.Text = gData.OperatingSystem_Version;
-		//	GeneralCPUText.Text = gData.CPU;
-		//	GeneralGPUText.Text = gData.GPU;
-		//	GeneralTimeTestText.Text = gData.time;
-		//}
+		
 
 		//optimizing loading in async
 		public async Task LoadGeneralDataAsync()
@@ -122,7 +64,6 @@ namespace PC_Detective
 
 				// Update UI
 				GeneralOSNameText.Text = gData.OperatingSystem_Name;
-				GeneralOSVersionText.Text = gData.OperatingSystem_Version;
 				GeneralCPUText.Text = gData.CPU;
 				GeneralGPUText.Text = gData.GPU;
 				GeneralTimeTestText.Text = gData.time;
@@ -158,9 +99,8 @@ namespace PC_Detective
 				computer.Open();
 
 				// Update UI
-				GeneralOSNameText.Text = hr.GetOsName();
-				GeneralOSVersionText.Text = hr.GetOsVersion();
-				GeneralCPUText.Text = hr.GetCPUName(computer);
+				GeneralOSNameText.Text =Cs.OperatingSystem.Name;
+				GeneralCPUText.Text = Cs.cpuModel.Model;
 				GeneralGPUText.Text = hr.GetGPUName(computer);
 				GeneralMotherboardText.Text = hr.GetMotherBoardModel();
 				GeneralRAMText.Text = hr.GetRAMsData();
@@ -175,22 +115,73 @@ namespace PC_Detective
 			}
 		}
 
-        public void DetailsFill(string type)
+		public async Task<bool> IsCpuCachedAsync()
+		{
+			if (Cs.cpuModel == null)
+			{
+				var l2CacheTask = Task.Run(() => hr.GetCPUL2Cache());
+				var l3CacheTask = Task.Run(() => hr.GetCPUL3Cache());
+				var modelTask = Task.Run(() => hr.GetCPUModelWMI());
+				var archTask = Task.Run(() => hr.GetCPUArcticture());
+				var clockTask = Task.Run(() => hr.GetCPUMaxClockSpeed());
+				var coresTask = Task.Run(() => hr.GetCPUCoreInfo());
+
+				await Task.WhenAll(l2CacheTask, l3CacheTask, modelTask, archTask, clockTask, coresTask);
+
+				Cs.cpuModel = new CPUModel
+				{
+					L2Cache = await l2CacheTask,
+					L3Cache = await l3CacheTask,
+					Model = await modelTask,
+					Architecture = await archTask,
+					DefaultClockSpeed = await clockTask,
+					Cores = await coresTask
+				};
+				return false;
+			}
+			return true;
+		}
+
+		public async Task<bool> IsOsDataCachedAsync()
+		{
+			if (Cs.OperatingSystem == null)
+			{
+				
+				var nameTask = Task.Run(() => hr.GetOsName());
+				var versionTask = Task.Run(() => hr.GetOsVersion());
+
+				await Task.WhenAll(nameTask, versionTask);
+
+				Cs.OperatingSystem = new OperatingSystemModel
+				{
+					Name = await nameTask,
+					Version = await versionTask
+				};
+				return false;
+			}
+			return true;
+		}
+
+		public void DetailsFill(string type)
         {
             List<DetailItem> details = new List<DetailItem>();
 
             switch (type)
             {
                 case "CPU":
-                    details.Add(new DetailItem { Key = "Model", Value = hr.GetCPUModelWMI() });
-                    details.Add(new DetailItem { Key = "Cores", Value = hr.GetCPUCoreInfo() });
-                    details.Add(new DetailItem { Key = "Default Clock Speed", Value = hr.GetCPUMaxClockSpeed() });
-                    details.Add(new DetailItem { Key = "Serial Number", Value = hr.GetCPUSerialNumber() });
-                    break;
+					IsCpuCachedAsync();
+                    details.Add(new DetailItem { Key = "Model", Value = Cs.cpuModel.Model });
+                    details.Add(new DetailItem { Key = "Cores", Value = Cs.cpuModel.Cores });
+                    details.Add(new DetailItem { Key = "Default Clock Speed", Value = Cs.cpuModel.DefaultClockSpeed });
+                    details.Add(new DetailItem { Key = "Archticture", Value = Cs.cpuModel.Architecture.ToString() });
+					details.Add(new DetailItem { Key = "L2 Cache", Value = Cs.cpuModel.L2Cache });
+					details.Add(new DetailItem { Key = "L3 Cache", Value = Cs.cpuModel.L3Cache });
+					break;
 
                 case "OS":
-                    details.Add(new DetailItem { Key = "OS Name", Value = hr.GetOsName() });
-                    details.Add(new DetailItem { Key = "OS Version", Value = hr.GetOsVersion() });
+					IsOsDataCachedAsync();
+                    details.Add(new DetailItem { Key = "OS Name", Value = Cs.OperatingSystem.Name });
+                    details.Add(new DetailItem { Key = "OS Version", Value = Cs.OperatingSystem.Version });
                     break;
 
                 case "RAM":

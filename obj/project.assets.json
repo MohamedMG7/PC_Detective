@@ -1091,19 +1091,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maham\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\PC Detective.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\PC Detective.csproj",
       "projectName": "PC Detective",
-      "projectPath": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\PC Detective.csproj",
-      "packagesPath": "C:\\Users\\maham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\obj\\",
+      "projectPath": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\PC Detective.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

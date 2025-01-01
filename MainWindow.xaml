@@ -25,9 +25,6 @@
                MouseLeftButtonDown="ShowOSDetails"/>
                 <TextBlock Name="GeneralOSNameText" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Operating System Version:" FontWeight="Bold"/>
-                <TextBlock Name="GeneralOSVersionText" Margin="0,0,0,10"/>
-
                 <TextBlock Text="CPU:" FontWeight="Bold" MouseLeftButtonDown="ShowCPUDetails" Cursor="Hand"/>
                 <TextBlock Name="GeneralCPUText" Margin="0,0,0,10"/>
 
@@ -49,41 +46,28 @@
                 <TextBlock Name="GeneralTimeTestText" Margin="0,0,0,10"/>
             </StackPanel>
 
-            <Border Grid.Column="1" Background="Gray" BorderBrush="DarkGray"
-                    BorderThickness="1" Padding="10" Margin="10" Height="450">
+            <Border Grid.Column="1" Background="LightGray" BorderBrush="DarkGray"
+                    BorderThickness="1" Padding="10" Margin="10" Height="550">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel>
+                        <TextBlock Text="Details Panel" FontSize="16" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center"/>
 
-                <!--<StackPanel>
-                    <TextBlock Text="Details Panel" FontSize="16" FontWeight="Bold" Margin="0,10,0,50" HorizontalAlignment="Center"/>
-
-                    <TextBlock Text="Model:" FontWeight="Bold"/>
-                    <TextBlock Name="CPUModelText" Margin="0,0,0,10"/>
-
-                    <TextBlock Text="Cores:" FontWeight="Bold"/>
-                    <TextBlock Name="CPUCoresText" Margin="0,0,0,10"/>
-
-                    <TextBlock Text="Default Clock Speed:" FontWeight="Bold"/>
-                    <TextBlock Name="CPUDefaultClockSpeedText" Margin="0,0,0,10"/>
-
-                </StackPanel>-->
-
-                <StackPanel>
-                    <TextBlock Text="Details Panel" FontSize="16" FontWeight="Bold" Margin="0,10,0,20" HorizontalAlignment="Center"/>
-
-                    <!-- Dynamic Details -->
-                    <ItemsControl Name="DetailsPanel" Margin="10" VirtualizingStackPanel.IsVirtualizing="True">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,10,0,10">
+                        <!-- Dynamic Details -->
+                        <ItemsControl Name="DetailsPanel" Margin="10" VirtualizingStackPanel.IsVirtualizing="True">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,10,0,10">
                                     
-                                    <TextBlock Text="{Binding Key}" FontWeight="Bold" Margin="0,0,0,5"/>
-                                    
-                                    <TextBlock Text="{Binding Value}" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                                        <TextBlock Text="{Binding Key}" FontWeight="Bold" FontSize="16" Margin="0,0,0,5"/>
+
+                                        <TextBlock Text="{Binding Value}" TextWrapping="Wrap" FontSize="16" Margin="0,0,0,10"/>
                                    
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>    
 
             </Border>
         </Grid>

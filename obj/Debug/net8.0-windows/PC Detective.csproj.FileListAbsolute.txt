@@ -105,3 +105,4 @@ C:\Users\maham\OneDrive\Desktop\sideprojects\PC_Detective\obj\Debug\net8.0-windo
 C:\Users\maham\OneDrive\Desktop\sideprojects\PC_Detective\obj\Debug\net8.0-windows\PC Detective.pdb
 C:\Users\maham\OneDrive\Desktop\sideprojects\PC_Detective\obj\Debug\net8.0-windows\PC Detective.genruntimeconfig.cache
 C:\Users\maham\OneDrive\Desktop\sideprojects\PC_Detective\obj\Debug\net8.0-windows\ref\PC Detective.dll
+C:\Users\user\Desktop\SideProjects\PC Detective\obj\Debug\net8.0-windows\PC Detective.sourcelink.json

@@ -3,6 +3,7 @@ using Hardware.Info;
 using System.Management;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
+using PC_Detective.Models;
 
 namespace PC_Detective.repositories
 {
@@ -172,6 +173,54 @@ namespace PC_Detective.repositories
             }
             return cpuSerialNumber;
             
+		}
+
+		public string GetCPUL2Cache() {
+			
+			string l2CacheSize = "Unknown";
+
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT L2CacheSize FROM Win32_Processor");
+
+			foreach (ManagementObject obj in searcher.Get())
+			{
+				l2CacheSize = obj["L2CacheSize"]?.ToString() + " KB";
+			}
+
+			return l2CacheSize;
+		}
+
+		public string GetCPUL3Cache() {
+			
+			string l3CacheSize = "Unknown";
+
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT L3CacheSize FROM Win32_Processor");
+
+			foreach (ManagementObject obj in searcher.Get())
+			{
+				l3CacheSize = obj["L3CacheSize"]?.ToString() + " KB";
+			}
+
+			return l3CacheSize;
+		}
+
+		public CpuArchitecture GetCPUArcticture() {
+			
+			CpuArchitecture architecture = CpuArchitecture.Unknown;
+
+			// Query WMI for CPU architecture
+			ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Architecture FROM Win32_Processor");
+
+			foreach (ManagementObject obj in searcher.Get())
+			{
+				int archCode = Convert.ToInt32(obj["Architecture"]);
+				// Cast architecture code to enum
+				if (Enum.IsDefined(typeof(CpuArchitecture), archCode))
+				{
+					architecture = (CpuArchitecture)archCode;
+				}
+			}
+
+			return architecture; // Return the enum
 		}
 	}
 }

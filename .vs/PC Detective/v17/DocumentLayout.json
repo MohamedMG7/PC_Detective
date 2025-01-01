@@ -1,22 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\maham\\onedrive\\desktop\\sideprojects\\pc_detective\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\maham\\onedrive\\desktop\\sideprojects\\pc_detective\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\maham\\onedrive\\desktop\\sideprojects\\pc_detective\\models\\detailitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:models\\detailitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\repositories\\hardwarerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:repositories\\hardwarerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\maham\\onedrive\\desktop\\sideprojects\\pc_detective\\repositories\\hardwarerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:repositories\\hardwarerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\models\\general.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:models\\general.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\models\\operatingsystemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:models\\operatingsystemmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\cachingsys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:cachingsys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\models\\gpu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:models\\gpu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|c:\\users\\user\\desktop\\sideprojects\\pc detective\\models\\cpumodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76436FDE-C672-4C4C-840E-500D967B5068}|PC Detective.csproj|solutionrelative:models\\cpumodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,36 +42,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DetailItem.cs",
-              "DocumentMoniker": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\Models\\DetailItem.cs",
-              "RelativeDocumentMoniker": "Models\\DetailItem.cs",
-              "ToolTip": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\Models\\DetailItem.cs",
-              "RelativeToolTip": "Models\\DetailItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAbAAAA",
+              "DocumentIndex": 3,
+              "Title": "General.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\General.cs",
+              "RelativeDocumentMoniker": "Models\\General.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\General.cs",
+              "RelativeToolTip": "Models\\General.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-29T21:14:46.575Z",
+              "WhenOpened": "2024-12-31T04:14:29.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "OperatingSystemModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\OperatingSystemModel.cs",
+              "RelativeDocumentMoniker": "Models\\OperatingSystemModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\OperatingSystemModel.cs",
+              "RelativeToolTip": "Models\\OperatingSystemModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T03:10:49.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CPUModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\CPUModel.cs",
+              "RelativeDocumentMoniker": "Models\\CPUModel.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\CPUModel.cs",
+              "RelativeToolTip": "Models\\CPUModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T03:06:33.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GPU.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\GPU.cs",
+              "RelativeDocumentMoniker": "Models\\GPU.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\Models\\GPU.cs",
+              "RelativeToolTip": "Models\\GPU.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T03:06:14.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CachingSys.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\CachingSys.cs",
+              "RelativeDocumentMoniker": "CachingSys.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\CachingSys.cs",
+              "RelativeToolTip": "CachingSys.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T02:57:56.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-28T20:53:16.436Z",
@@ -63,26 +135,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAzwNMAAAANAAAA",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAmwJIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T01:58:31.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "HardwareRepository.cs",
-              "DocumentMoniker": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\repositories\\HardwareRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\repositories\\HardwareRepository.cs",
               "RelativeDocumentMoniker": "repositories\\HardwareRepository.cs",
-              "ToolTip": "C:\\Users\\maham\\OneDrive\\Desktop\\sideprojects\\PC_Detective\\repositories\\HardwareRepository.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\SideProjects\\PC Detective\\repositories\\HardwareRepository.cs",
               "RelativeToolTip": "repositories\\HardwareRepository.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAiwLEAAAAAAAAA",
+              "ViewState": "AQIAALMAAAAAAAAAAAAYwL0AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T01:06:36.38Z",
               "EditorCaption": ""
